@@ -1,0 +1,9 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+INSERT INTO movie_entity (id, title, description, created, modified) VALUES (uuid_generate_v4(), 'Star Wars: Episode I - The Phantom Menace', 'The Phantom Menace is a 1999 American epic space-opera film written and directed by George Lucas, produced by Lucasfilm, distributed by 20th Century Fox and stars Liam Neeson, Ewan McGregor, Natalie Portman, Jake Lloyd, Ian McDiarmid, Anthony Daniels, Kenny Baker, Pernilla August, and Frank Oz', Now(), Now());
+
+SELECT title, description FROM movie_entity;
+
+UPDATE movie_entity SET title = 'Star Wars: Episode II - Attack of the Clones' WHERE title = 'Star Wars: Episode I - The Phantom Menace';
+
+DELETE FROM movie_entity WHERE title = 'Star Wars: Episode II - Attack of the Clones';
+
